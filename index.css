@@ -1,45 +1,60 @@
+/* Base CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.dark-mode{
-    background-color:hsl(209, 23%, 22%);;
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.dark-mode {
+    background-color: hsl(209, 23%, 22%);
     color: white;
 }
+
+/* Navigation Bar */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 70px;
+    padding: 10px ;
+    
     box-shadow: 0px 0px 5px 0px rgba(255, 192, 203, 0.701);
 }
-header .dark-mode{
+
+nav .dark-mode {
     background-color: hsl(207, 26%, 17%);
-    
 }
+
+/* Search Section */
 .search {
     display: flex;
     justify-content: space-between;
-    padding: 20px 70px;
-}
-
-.input1,
-.select {
-    padding: 10px 20px;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    margin: 1rem 2rem;
     box-shadow: 0px 0px 5px 2px rgba(255, 192, 203, 0.749);
+    border-radius: 8px;
+}
+.search input{
+    flex: 1;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.search select{
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.input1 input {
-    font-size: 12px;
-    border: none;
-    padding-left: 6px;
-}
-
-.select select {
-    border: none;
-}
-
+/* Main Content */
 main {
     margin: auto;
     display: flex;
@@ -47,9 +62,12 @@ main {
     gap: 30px;
     justify-content: center;
 }
-main .dark-mode{
-    background-color: hsl(207, 26%, 17%);;
+
+main .dark-mode {
+    background-color: hsl(207, 26%, 17%);
 }
+
+/* Box Section */
 .box {
     width: 250px;
     max-height: 500px;
@@ -58,6 +76,7 @@ main .dark-mode{
 
 .box img {
     width: 100%;
+    height: auto;
 }
 
 .box .box-text {
@@ -76,7 +95,7 @@ main .dark-mode{
     padding: 5px 0px;
 }
 
-/* Responsive Design for Small Screens */
+/* Responsive Design */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -85,22 +104,25 @@ main .dark-mode{
     }
 
     .search {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 20px;
+       
+       flex-direction: column;
     }
 
-    .input, .select {
+    .search input{
         width: 100%;
-        padding: 10px;
     }
-
-    .boxall {
-        gap: 20px;
+    .search select{
+        width: 100%;
+    }
+    main {
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .box {
-        width: 90%; /* Boxes will take up most of the screen width on smaller devices */
+    
+        gap: 20px;
+        max-height:1000px;
     }
 }
 
@@ -117,18 +139,16 @@ main .dark-mode{
         padding: 10px 15px;
     }
 
-    .input, .select {
-        width: 100%;
+    .input1,
+    .select {
+        width: 90%;
+        margin: auto;
         font-size: 14px;
         padding: 8px;
     }
 
     .box {
         width: 80%;
-        margin: auto; /* Boxes will take full width for very small screens */
-    }
-
-    .box img {
-        height: auto; /* Ensure images resize properly */
+        margin: auto;
     }
 }
