@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.dark-mode{
+    background-color:hsl(209, 23%, 22%);;
+    color: white;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 70px;
+    box-shadow: 0px 0px 5px 0px rgba(255, 192, 203, 0.701);
+}
+header .dark-mode{
+    background-color: hsl(207, 26%, 17%);
+    
+}
+.search {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 70px;
+}
+
+.input1,
+.select {
+    padding: 10px 20px;
+    box-shadow: 0px 0px 5px 2px rgba(255, 192, 203, 0.749);
+}
+
+.input1 input {
+    font-size: 12px;
+    border: none;
+    padding-left: 6px;
+}
+
+.select select {
+    border: none;
+}
+
+main {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+main .dark-mode{
+    background-color: hsl(207, 26%, 17%);;
+}
+.box {
+    width: 250px;
+    max-height: 500px;
+    box-shadow: 0px 0px 5px 2px rgba(255, 192, 203, 0.749);
+}
+
+.box img {
+    width: 100%;
+}
+
+.box .box-text {
+    padding: 10px 20px;
+}
+
+.box-text .bold {
+    font-weight: bold;
+}
+
+.box-text h2 {
+    padding: 10px 0px;
+}
+
+.box-text p {
+    padding: 5px 0px;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .search {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+
+    .input, .select {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .boxall {
+        gap: 20px;
+    }
+
+    .box {
+        width: 90%; /* Boxes will take up most of the screen width on smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+
+    .search {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 15px;
+    }
+
+    .input, .select {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .box {
+        width: 80%;
+        margin: auto; /* Boxes will take full width for very small screens */
+    }
+
+    .box img {
+        height: auto; /* Ensure images resize properly */
+    }
+}
