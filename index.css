@@ -1,154 +1,162 @@
 /* Base CSS */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
 .dark-mode {
-    background-color: hsl(209, 23%, 22%);
-    color: white;
+  background-color: hsl(209, 23%, 22%);
+  color: white;
 }
 
 /* Navigation Bar */
 nav {
+    padding: 0px 10px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px ;
-    
-    box-shadow: 0px 0px 5px 0px rgba(255, 192, 203, 0.701);
+    justify-content: space-between;
+  box-shadow: 0px 0px 5px 0px rgba(255, 192, 203, 0.701);
+}
+nav .mode{
+    display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
 }
 
 nav .dark-mode {
-    background-color: hsl(207, 26%, 17%);
+  background-color: hsl(207, 26%, 17%);
 }
 
 /* Search Section */
 .search {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    gap: 1rem;
-    margin: 1rem 2rem;
-    box-shadow: 0px 0px 5px 2px rgba(255, 192, 203, 0.749);
-    border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  margin: 1rem 2rem;
+  box-shadow: 0px 0px 5px 2px rgba(255, 192, 203, 0.749);
+  border-radius: 8px;
 }
-.search input{
-    flex: 1;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.search input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
-.search select{
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.search select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 /* Main Content */
 main {
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }
 
 main .dark-mode {
-    background-color: hsl(207, 26%, 17%);
+  background-color: hsl(207, 26%, 17%);
 }
 
 /* Box Section */
+#newbox{
+    padding: 20px 30px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+
 .box {
-    width: 250px;
-    max-height: 500px;
-    box-shadow: 0px 0px 5px 2px rgba(255, 192, 203, 0.749);
+  width: 250px;
+  max-height: 500px;
+  box-shadow: 0px 0px 5px 2px rgba(255, 192, 203, 0.749);
 }
 
 .box img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .box .box-text {
-    padding: 10px 20px;
+  padding: 10px 20px;
 }
 
 .box-text .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .box-text h2 {
-    padding: 10px 0px;
+  padding: 10px 0px;
 }
 
 .box-text p {
-    padding: 5px 0px;
+  padding: 5px 0px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
-    }
+  nav {
+    padding:1rem;
+  }
 
-    .search {
-       
-       flex-direction: column;
-    }
+  .search {
+    flex-direction: column;
+  }
 
-    .search input{
-        width: 100%;
-    }
-    .search select{
-        width: 100%;
-    }
-    main {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  .search input {
+    width: 100%;
+  }
+  .search select {
+    width: 100%;
+  }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    .box {
-    
-        gap: 20px;
-        max-height:1000px;
-    }
+  .box {
+    gap: 20px;
+    max-height: 1000px;
+  }
 }
 
 @media (max-width: 480px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 15px;
-    }
+  /* nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  } */
 
-    .search {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 15px;
-    }
+  .search {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+  }
 
-    .input1,
-    .select {
-        width: 90%;
-        margin: auto;
-        font-size: 14px;
-        padding: 8px;
-    }
+  .input1,
+  .select {
+    width: 90%;
+    margin: auto;
+    font-size: 14px;
+    padding: 8px;
+  }
 
-    .box {
-        width: 80%;
-        margin: auto;
-    }
+  .box {
+    width: 80%;
+    margin: auto;
+  }
 }

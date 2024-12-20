@@ -3,9 +3,6 @@ let main=document.querySelector("main");
 let input=document.querySelector("input");
 let select=document.querySelector("select");
 
-
-
-
 fetch(api)
 .then((response) => {
   return response.json();
@@ -22,7 +19,7 @@ fetch(api)
               showData(filtereddata)
               });
         })
-    //   // Function to show data
+// Function to show data
 
   function showData(data) {
     main.innerHTML = "";
@@ -38,11 +35,38 @@ fetch(api)
             <p><span class="bold">Region</span> : ${element.region}</p>
             <p><span class="bold">Capital</span> : ${element.capital}</p>
           </div>
-        `
+        `;
+        div.addEventListener("click", () => {
+          showDetails(element);
+        });
       main.appendChild(div);
     });
   }
-
+  function showDetails(country) {
+    document.querySelector(".search").style.display="none";
+    main.innerHTML = `
+      <div class="boxnew" id="newbox">
+        <div class="img-box"><img src=${country.flags.svg} alt="Flag of ${country.name.common}"><div/>
+        <div class="box-text" id="boxtext">
+          <h2>${country.name.common}</h2>
+          <p><span class="bold">Native Name</span>: ${country.name.official}</p>
+          <p><span class="bold">Population</span>: ${country.population}</p>
+          <p><span class="bold">Region</span>: ${country.region}</p>
+          <p><span class="bold">Sub Region</span>: ${country.subregion}</p>
+          <p><span class="bold">Capital</span>: ${country.capital}</p>
+          <p><span class="bold">Languages</span>: ${Object.values(country.languages || {}).join(
+            ", "
+          )}</p>
+          <p><span class="bold">Currencies</span>: ${Object.values(
+            country.currencies || {}
+          )
+            .map((currency) => currency.name)
+            .join(", ")}</p>
+          <p><span class="bold">Top Level Domain</span>: ${country.tld.join(", ")}</p>
+        </div>
+      </div>
+    `;
+  }
 
 let mode=document.getElementById("mode");
 mode.addEventListener("click", () => {
@@ -53,6 +77,13 @@ mode.addEventListener("click", () => {
     document.querySelectorAll(".box").forEach((box) => {
         box.classList.toggle("dark-mode");
     });
+    if(document.body.getAttribute("class")==="dark-mode"){
+      mode.innerHTML=`
+      <i class="fa-regular fa-sun"></i> Light Mode`
+    }else{
+      mode.innerHTML=`
+      <i class="fa-regular fa-moon"></i> Dark Mode`
+    }
 });
 
 
