@@ -42,12 +42,12 @@ fetch(api)
       allBox.appendChild(div);
     });
   }
-  let main=document.querySelector("main")
+  let main = document.querySelector("main")
   function showDetails(country) {
     document.querySelector(".search").style.display="none";
     main.innerHTML = `
-      <button>Back</button>
-      <div class="boxnew" id="newbox">
+      <button class="back-btn">Back</button>
+      <div class="box-new">
         <div class="img-box"><img src=${country.flags.svg} alt="Flag of ${country.name.common}"></div>
         <div class="box-text" id="boxtext">
           <h2>${country.name.common}</h2>
@@ -77,6 +77,8 @@ fetch(api)
 
 let mode=document.getElementById("mode");
 mode.addEventListener("click", () => {
+    console.log("hi");
+    
     document.body.classList.toggle("dark-mode");
     input.classList.toggle("dark-mode");
     select.classList.toggle("dark-mode");
