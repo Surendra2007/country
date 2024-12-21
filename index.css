@@ -17,14 +17,14 @@ body {
 
 /* Navigation Bar */
 nav {
-    padding: 0px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   box-shadow: 0px 0px 5px 0px rgba(255, 192, 203, 0.701);
 }
-nav .mode{
-    display: flex;
+nav .mode {
+  display: flex;
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
@@ -60,7 +60,7 @@ nav .dark-mode {
 }
 
 /* Main Content */
-main {
+.allbox {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -68,16 +68,47 @@ main {
   justify-content: center;
 }
 
-main .dark-mode {
+.allbox .dark-mode {
   background-color: hsl(207, 26%, 17%);
 }
 
 /* Box Section */
-#newbox{
-    padding: 20px 30px;
-    width: 90%;
-    margin: auto;
-    display: flex;
+.boxnew {
+  padding: 20px 30px;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+button{
+  padding: 10px 15px;
+  border-radius: 15px;
+  margin-left: 50%;
+  margin-top: 10px;
+  border: none;
+  background-color: rgba(255, 192, 203, 0.628);
+  box-shadow: 0px 0px 5px 2px rgba(255, 192, 203, 0.749);
+  color: black;
+  font-weight: bold;
+  font-size: larger;
+}
+button:hover{
+  background-color: palevioletred;
+}
+
+.img-box {
+  width: 600px;
+}
+.img-box img {
+  width: 100%;
+}
+
+#boxtext {
+  align-items: center;
+  justify-items: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 200px;
 }
 
 .box {
@@ -110,7 +141,7 @@ main .dark-mode {
 /* Responsive Design */
 @media (max-width: 768px) {
   nav {
-    padding:1rem;
+    padding: 1rem;
   }
 
   .search {
@@ -123,7 +154,8 @@ main .dark-mode {
   .search select {
     width: 100%;
   }
-  main {
+
+  .allbox {
     display: flex;
     flex-wrap: wrap;
   }
@@ -135,11 +167,11 @@ main .dark-mode {
 }
 
 @media (max-width: 480px) {
-  /* nav {
+  nav {
     flex-direction: column;
     align-items: flex-start;
     padding: 10px 15px;
-  } */
+  }
 
   .search {
     flex-direction: column;
@@ -147,8 +179,8 @@ main .dark-mode {
     padding: 10px 15px;
   }
 
-  .input1,
-  .select {
+  .search input,
+  .search select {
     width: 90%;
     margin: auto;
     font-size: 14px;
@@ -156,7 +188,27 @@ main .dark-mode {
   }
 
   .box {
-    width: 80%;
+    width: 90%;
     margin: auto;
+  }
+
+  .img-box {
+    width: 100%;
+  }
+ 
+  #boxtext {
+    height: auto;
+    text-align: center;
+  }
+
+  .box-text {
+    padding: 10px;
+    text-align: center;
+  }
+
+  nav .mode {
+    justify-content: flex-start;
+    width: 100%;
+    gap: 1rem;
   }
 }

@@ -1,5 +1,5 @@
 let api="https://restcountries.com/v3.1/all";
-let main=document.querySelector("main");
+let allBox=document.querySelector(".allbox");
 let input=document.querySelector("input");
 let select=document.querySelector("select");
 
@@ -22,7 +22,7 @@ fetch(api)
 // Function to show data
 
   function showData(data) {
-    main.innerHTML = "";
+    allBox.innerHTML = "";
     data.forEach((element) => {
       let div=document.createElement("div");
         div.classList.add("box")
@@ -39,14 +39,16 @@ fetch(api)
         div.addEventListener("click", () => {
           showDetails(element);
         });
-      main.appendChild(div);
+      allBox.appendChild(div);
     });
   }
+  let main=document.querySelector("main")
   function showDetails(country) {
     document.querySelector(".search").style.display="none";
     main.innerHTML = `
+      <button>Back</button>
       <div class="boxnew" id="newbox">
-        <div class="img-box"><img src=${country.flags.svg} alt="Flag of ${country.name.common}"><div/>
+        <div class="img-box"><img src=${country.flags.svg} alt="Flag of ${country.name.common}"></div>
         <div class="box-text" id="boxtext">
           <h2>${country.name.common}</h2>
           <p><span class="bold">Native Name</span>: ${country.name.official}</p>
@@ -62,10 +64,15 @@ fetch(api)
           )
             .map((currency) => currency.name)
             .join(", ")}</p>
-          <p><span class="bold">Top Level Domain</span>: ${country.tld.join(", ")}</p>
+          <p><span class="bold">Top Level DoallBox</span>: ${country.tld.join(", ")}</p>
         </div>
       </div>
     `;
+
+    let button = document.querySelector("button");
+    button.addEventListener("click",()=>{
+      window.location.href = "./index.html"
+    })
   }
 
 let mode=document.getElementById("mode");
